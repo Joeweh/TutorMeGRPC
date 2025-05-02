@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+import 'google/protobuf/empty.proto';
+
+package account;
+
+option java_multiple_files = true;
+option java_package = "api";
+option java_outer_classname = "Auth";
+
+service AuthService {
+  rpc SignIn(Credential) returns (google.protobuf.Empty);
+
+  rpc SignUp(Credential) returns (google.protobuf.Empty);
+  rpc VerifyEmail(VerifyEmailRequest) returns (google.protobuf.Empty);
+
+  rpc RequestAccountDeletion(Credential) returns (google.protobuf.Empty);
+  rpc ConfirmDeletion(VerifyEmailRequest) returns (google.protobuf.Empty);
+}
+
+enum AccountStatus {
+  PENDING_VERIFICATION = 0;
+  PENDING_DELETION = 1;
+  VERIFIED = 2;
+}
+
+message User {
+  string uid = 1;
+  string email = 2;
+  AccountStatus status = 3;
+}
+
+message Credential {
+  string email = 1;
+  string password = 2;
+}
+
+message VerifyEmailRequest {
+  string email = 1;
+  string code = 2;
+}
