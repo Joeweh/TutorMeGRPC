@@ -5,7 +5,7 @@ import com.zaxxer.hikari.HikariDataSource
 import javax.sql.DataSource
 
 object DB {
-    var dataSource: DataSource = init()
+    val dataSource: DataSource = init()
 
     private fun init(): DataSource {
         val hikariConfig = HikariConfig().apply {
