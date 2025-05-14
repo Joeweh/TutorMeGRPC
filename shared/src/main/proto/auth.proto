@@ -5,7 +5,7 @@ import 'google/protobuf/empty.proto';
 package account;
 
 option java_multiple_files = true;
-option java_package = "api";
+option java_package = "api.auth";
 option java_outer_classname = "Auth";
 
 service AuthService {

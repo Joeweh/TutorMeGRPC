@@ -1,7 +1,7 @@
-import api.AccountStatus
-import api.AuthServiceGrpcKt
-import api.Credential
-import api.VerifyEmailRequest
+import api.auth.AccountStatus
+import api.auth.AuthServiceGrpcKt
+import api.auth.Credential
+import api.auth.VerifyEmailRequest
 import com.google.protobuf.Empty
 import io.grpc.Status
 import org.mindrot.jbcrypt.BCrypt
